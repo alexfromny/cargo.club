@@ -1,0 +1,438 @@
+select, input:not([type=checkbox]){
+    @include input();
+}
+
+input[type=date] {
+    width: 170px;
+}
+
+.textarea-form-control {
+    position: relative;
+    display: block;
+    border: 1px solid $input-border-color;
+    @include border-radius($input-radius);
+    @include hover-trans;
+
+    &.active, &:focus, &:active, &:hover {
+        border-color: $brand;
+        @include box-shadow(0, 0, 3px, $brand);
+    }
+
+    textarea {
+        display: block;
+        resize: none;
+        width: 100%;
+        padding: $input-padding;
+        background: $content-background;
+        @include border-radius($input-radius);
+        vertical-align: middle;
+        @include font-normal();
+        height: 110px;
+        border: none;
+    }
+}
+
+label {
+    @include font-normal();
+    color: $label-color;
+}
+
+.form {
+    .form-control-group {
+        margin-bottom: 20px;
+
+        .form-label {
+            line-height: 1em;
+            margin-bottom: 9px;
+            display: block;
+        }
+
+        .form-label-inline {
+            line-height: 37px;
+            margin-right: 5px;
+        }
+
+        .form-label-standalone {
+            line-height: 37px;
+            margin-bottom: 9px;
+            display: block;
+        }
+
+        .form-control {
+            &.form-control-extra-small {
+                width: 55px;
+            }
+
+            &.form-control-small {
+                width: 105px;
+            }
+
+            &.form-control-full-width {
+                display: block;
+                width: 100%;
+                margin-bottom: 9px;
+            }
+
+            &.form-control-standalone {
+                display: inline-block;
+                width: 95%;
+            }
+        }
+
+        .static-control {
+            display: inline-block;
+            line-height: 37px;
+            height: 37px;
+            font-size: $text-large-size;
+        }
+
+        &.form-control-group-standalone {
+            float: none !important;
+            margin-right: 0 !important;
+        }
+    }
+
+    .button-group {
+        padding: 0;
+        margin: 24px 0 0;
+        @include clearfix();
+    }
+
+    .required {
+        &:before {
+            content: "*";
+            color: $brand;
+        }
+    }
+
+    .is-invalid {
+        border-color: #ee0652;
+
+        &.active, &:focus, &:active {
+            border-color: #ee0652;
+            @include box-shadow(0, 0, 3px, #ee0652);
+        }
+    }
+
+    &.form-horizontal {
+        .form-label {
+            line-height: 37px;
+        }
+
+        .grid {
+            margin-bottom: 0;
+        }
+
+        .button-group {
+            margin: 15px 0 0;
+        }
+
+        .form-control-group {
+            @include clearfix();
+            margin-bottom: 0;
+        }
+    }
+
+    .grid {
+        margin-bottom: 15px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    [class*='col-'] {
+        padding: 0 7px;
+        @include box-sizing(border-box);
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+
+    .form-block {
+        padding: 20px;
+        border-bottom: 1px solid $border-color;
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        &:last-child {
+            padding-bottom: 10px;
+            border-bottom: none;
+        }
+
+        .form-block-title {
+            font-size: $text-large-size;
+            margin-bottom: 25px;
+        }
+
+        .grid {
+            margin-bottom: 0;
+        }
+    }
+
+    .form-range-control-group {
+        @include clearfix();
+
+        .form-control-group {
+            float: left;
+        }
+    }
+
+    .form-range-divider {
+        height: 40px;
+        display: block;
+        border-bottom: 1px solid $label-color;
+        width: 15px;
+        margin: 0 7px;
+        float: left;
+    }
+
+    .form-range-slider-wrapper {
+        @include clearfix();
+
+        .form-range-slider {
+            margin-bottom: 9px;
+        }
+
+        .form-range-slider-min {
+            float: left;
+        }
+
+        .form-range-slider-max {
+            float: right;
+        }
+    }
+}
+
+.checkbox-inline {
+    margin: 0 20px 7px 0;
+    color: $text;
+    line-height: 19px;
+    vertical-align: top;
+    display: inline-block;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    input {
+        vertical-align: top;
+
+        &:before {
+            content: '';
+            display: inline-block;
+            width: 17px;
+            height: 17px;
+            line-height: 17px;
+            margin: -1px 0 0 -1px;
+            border: 1px solid $border-color;
+            @include border-radius(3px);
+            background: $content-background;
+            color: $content-background;
+            text-align: center;
+            vertical-align: top;
+            cursor: pointer;
+        }
+
+        &:hover:before {
+            border-color: $brand;
+        }
+
+        &:checked:before {
+            content: '✔';
+            background: $brand;
+            border-color: $brand;
+        }
+    }
+}
+
+.checkbox-list {
+    .checkbox-inline {
+        display: block;
+        margin: 0 0 14px;
+    }
+}
+
+.panel-body-form {
+    .form {
+        .form-control-group {
+            margin-bottom: 6px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .form-label-inline {
+            float: none;
+            width: auto;
+            display: block;
+            margin: 0;
+            min-height: 1px;
+        }
+
+        .form-control.form-control-full-width {
+            margin: 0;
+        }
+    }
+
+    @media screen and (min-width: $tablet-width) {
+        .form {
+            .form-label-inline {
+                width: 50%;
+                float: left;
+                margin: 0;
+                min-height: 1px;
+            }
+
+            .form-control.form-control-full-width {
+                width: 50%;
+            }
+        }
+    }
+}
+
+
+.accent-content {
+    .form-control-complex {
+        .form-control-complex-label {
+            background: $accent-color !important;
+        }
+
+        .form-control-complex-btn {
+            &:hover {
+                color: $accent-color !important;
+            }
+        }
+    }
+
+    .btn-secondary {
+        &:hover {
+            color: $accent-color;
+            background: $accent-color-lighten;
+        }
+    }
+
+    .checkbox-inline {
+        input {
+            &:hover:before {
+                border-color: $accent-color;
+            }
+
+            &:checked:before {
+                background: $accent-color;
+                border-color: $accent-color;
+            }
+        }
+    }
+
+    .form-control {
+        &.active, &:focus, &:active, &:hover {
+            border-color: $accent-color;
+            @include box-shadow(0, 0, 3px, $accent-color);
+        }
+    }
+
+    .textarea-form-control {
+        &.active, &:focus, &:active, &:hover {
+            border-color: $accent-color;
+            @include box-shadow(0, 0, 3px, $accent-color);
+        }
+    }
+
+    .dropdown {
+        .dropdown-list {
+            border-color: $accent-color;
+        }
+
+        &.is-active, &:focus, &:active, &:hover {
+            .dropdown-selected {
+                border-color: $accent-color;
+                @include box-shadow(0, 0, 3px, $accent-color);
+
+                &:after {
+                    color: $accent-color;
+                }
+            }
+        }
+
+        &.is-active {
+            .dropdown-item {
+                &.is-selected {
+                    background: $accent-color-lighten;
+                }
+
+                &:hover {
+                    background: $accent-color;
+                    border-top-color: $accent-color-lighten;
+                    border-bottom-color: $accent-color-lighten;
+                }
+            }
+        }
+    }
+
+    .btn-primary {
+        border: 1px solid #c76100;
+        text-shadow: -1px -1px 0 rgba(237,97,0,0.3);
+        color: #FFFFFF;
+        background-color: #FF7C00; background-image: -webkit-gradient(linear, left top, left bottom, from(#FF7C00), to(#FF6500));
+        background-image: -webkit-linear-gradient(top, #FF7C00, #FF6500);
+        background-image: -moz-linear-gradient(top, #FF7C00, #FF6500);
+        background-image: -ms-linear-gradient(top, #FF7C00, #FF6500);
+        background-image: -o-linear-gradient(top, #FF7C00, #FF6500);
+        background-image: linear-gradient(to bottom, #FF7C00, #FF6500);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#FF7C00, endColorstr=#FF6500);
+
+        &:hover {
+            border-color: #994a00;
+            background-color: #CC6300; background-image: -webkit-gradient(linear, left top, left bottom, from(#CC6300), to(#cc5100));
+            background-image: -webkit-linear-gradient(top, #CC6300, #cc5100);
+            background-image: -moz-linear-gradient(top, #CC6300, #cc5100);
+            background-image: -ms-linear-gradient(top, #CC6300, #cc5100);
+            background-image: -o-linear-gradient(top, #CC6300, #cc5100);
+            background-image: linear-gradient(to bottom, #CC6300, #cc5100);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#CC6300, endColorstr=#cc5100);
+        }
+    }
+
+
+    .switch-group {
+        .switch-item {
+            &.is-selected {
+                color: $accent-color;
+            }
+        }
+    }
+
+    .currency-group {
+        .currency-item {
+            &.is-selected {
+                b,
+                &:after {
+                    color: $accent-color;
+                }
+            }
+        }
+    }
+
+
+    /* jQuery UI */
+    .ui-widget-header {
+        background: $accent-color;
+    }
+
+    .ui-state-active,
+    .ui-widget-content .ui-state-active,
+    .ui-widget-header .ui-state-active {
+        border-color: $accent-color;
+    }
+    
+    .ui-slider-handle {
+        outline-color: $accent-color-lighten;
+    }
+}

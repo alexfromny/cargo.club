@@ -1,0 +1,189 @@
+.registration-choose {
+    padding-bottom: 25px;
+    font-size: 0;
+    text-align: center;
+    margin: 0 -25px;
+
+    .registration-select {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+        padding-bottom: 15px;
+    }
+
+    @media screen and (min-width: $tablet-width) {
+        margin: 0;
+
+        .registration-select {
+            display: inline-block;
+            width: 33.3%;
+        }
+    }
+}
+
+.registration-selector {
+    background: url('') center top no-repeat;
+    background-size: 87px 87px;
+    padding: 110px 0 0;
+    text-align: center;
+    line-height: 1em;
+    font-size: $text-size * 0.9;
+    display: block;
+    margin: 0 auto;
+    @include box-sizing(border-box);
+    @include reset-link();
+
+    &.registration-selector-forwarder {
+        background-image: url('../img/registration/forwarder.png');
+    }
+
+    &.registration-selector-transporter {
+        background-image: url('../img/registration/transporter.png');
+    }
+
+    &.registration-selector-shipper {
+        background-image: url('../img/registration/shipper.png');
+    }
+
+    &.registration-selector-legal-person {
+        background-image: url('../img/registration/legal-person.png');
+    }
+
+    &.registration-selector-individual-person {
+        background-image: url('../img/registration/individual-person.png');
+    }
+
+    &.registration-selector-company {
+        background-image: url('../img/registration/company.png');
+    }
+
+    @media screen and (min-width: $tablet-width) {
+        font-size: $text-large-size;
+    }
+
+}
+
+.registration-title {
+    margin: 0 0 30px;
+    text-align: center;
+    color: $text;
+    font-size: 16px;
+
+    @media screen and (min-width: $tablet-width) {
+        margin: 0 20px 30px;
+        font-size: 22px;
+    }
+}
+
+.registration-avatar-wrapper {
+    position: relative;
+    margin: 0 0 25px;
+
+    .registration-avatar {
+        background: $border-color;
+        height: 133px;
+        width: 133px;
+        @include border-radius($input-radius);
+
+        .registration-selector {
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-position: center center;
+        }
+    }
+
+    .registration-upload {
+        position: absolute;
+        z-index: 1;
+        color: $text;
+        font-size: $text-size * 0.8;
+        top: 0;
+        right: 0;
+        left: 133px;
+        height: 133px;
+        padding: 15px 10px;
+        border: 1px dashed $border-color;
+        border-left: 0;
+        @include border-radius(0 $input-radius $input-radius 0);
+        overflow: hidden;
+
+        .icon {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            strong {
+                font-size: $text-large-size;
+            }
+        }
+
+        input[type=file] {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            @include opacity(0);
+        }
+
+        .registration-upload-hint {
+            display: none;
+        }
+
+        @media screen and (min-width: $tablet-width) {
+            .registration-upload {
+                padding: 15px;
+                font-size: $text-size;
+            }
+            .registration-upload-hint {
+                display: block;
+            }
+        }
+    }
+}
+
+.form.form-registration {
+    margin: 0 -25px;
+
+    .grid {
+        margin: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    [class*='col-'] {
+        padding: 0;
+    }
+
+    .mobile-col-1-3 {
+        padding: 0 7px;
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+
+    @media screen and (min-width: $tablet-width) {
+        margin: 0;
+
+        [class*='col-'] {
+            padding: 0 7px;
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+}

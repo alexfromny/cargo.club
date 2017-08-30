@@ -1,0 +1,20 @@
+$icon-font: 'Icomoon';
+
+@mixin heading-font {
+    font-family: "LatoBold", Calibri, Arial, Sans-serif;
+}
+
+@mixin font-normal {
+    font-family: "LatoRegular", Calibri, Arial, Sans-serif;
+    font-weight: 400;
+}
+
+@mixin font-bold {
+    font-family: "LatoBold", Calibri, Arial, Sans-serif;
+    font-weight: 400;
+}
+
+@mixin font-thin {
+    font-family: "LatoLight", Calibri, Arial, Sans-serif;
+    font-weight: 400;
+}

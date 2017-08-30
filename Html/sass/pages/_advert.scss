@@ -1,0 +1,1048 @@
+.hide-mobile {
+    display: none;
+}
+.panel .panel-body.panel-body-adverts {
+    padding: 0;
+}
+
+.panel-advert-view {
+    margin-top: -30px;
+    padding-top: 30px;
+}
+
+.panel-advert-view,
+.panel-adverts,
+.panel-advert-additional {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+@media screen and (min-width: $tablet-width) {
+    .hide-mobile {
+        display: inline;
+    }
+
+    .panel-advert-view {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    .panel-advert-view,
+    .panel-adverts,
+    .panel-advert-additional {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .panel-advert-additional {
+        @include clearfix();
+    }
+
+    .panel-company-information {
+        width: 49%;
+        float: left;
+
+        .panel-body {
+            min-height: 160px;
+        }
+    }
+
+    .panel-contact-information {
+        width: 49%;
+        float: right;
+
+        .panel-body {
+            min-height: 160px;
+        }
+    }
+}
+
+@media screen and (min-width: $desktop-width) {
+    .panel-advert-additional {
+        width: $advert-left-part-width;
+        float: left;
+        padding: 0 15px 0 0;
+    }
+
+    .panel-contact-information,
+    .panel-company-information {
+        float: none;
+        width: auto;
+
+        .panel-body {
+            min-height: 0;
+        }
+    }
+
+    .panel-advert-view,
+    .panel-adverts {
+        float: right;
+        width: $content-width - $advert-left-part-width;
+    }
+}
+
+.company-info {
+    @include clearfix();
+    margin: 0 -8px;
+
+    .company-image {
+        float: left;
+        display: block;
+        position: relative;
+        overflow: hidden;
+
+        width: 100px;
+        border: 1px solid $border-color;
+        background: $content-background;
+        @include box-shadow(0, 0, 1px, $border-color);
+        @include border-radius(3px);
+        @include box-sizing(border-box);
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        &.company-approved {
+            &:after {
+                content: '';
+                display: block;
+                width: 18px;
+                height: 18px;
+                position: absolute;
+                bottom: 7px;
+                left: 7px;
+                background: url('../img/icons/approved.png') 0 0 no-repeat;
+                background-size: 100%;
+            }
+        }
+    }
+
+    .company-details {
+        margin-left: 120px;
+        padding-top: 10px;
+
+        .company-name {
+            @include font-normal();
+            font-size: $text-large-size;
+            margin-bottom: 8px;
+
+            a {
+                color: $text-strong;
+            }
+        }
+
+        .company-rating-number {
+            font-size: $text-large-size;
+        }
+    }
+}
+
+.contact-info {
+    padding: 5px 0;
+
+    .contact-name {
+        margin-bottom: 20px;
+    }
+
+    .contact-detail {
+        line-height: 18px;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+@mixin advert-block-left-border {
+    position: relative;
+
+    &:before {
+        content: '';
+        display: block;
+        width: 1px;
+        background: $border-color;
+        position: absolute;
+        top: 40px;
+        bottom: 0;
+        left: 0;
+    }
+}
+@mixin advert-block-right-border {
+    position: relative;
+
+    &:after {
+        content: '';
+        display: block;
+        width: 1px;
+        background: $border-color;
+        position: absolute;
+        top: 40px;
+        bottom: 0;
+        right: -1px;
+    }
+}
+
+.advert-block-information {
+    @include clearfix();
+
+    .advert-block-calendar-and-price {
+        @include clearfix();
+    }
+
+    .advert-block-calendar,
+    .advert-block-price {
+        float: left;
+        width: 50%;
+    }
+
+    .advert-block-calendar {
+        @include advert-block-right-border();
+    }
+
+    .advert-block-price {
+        @include advert-block-left-border();
+    }
+
+    @media screen and (min-width: $tablet-width) {
+        .advert-block-path,
+        .advert-block-calendar,
+        .advert-block-price {
+            .panel-body {
+                min-height: 100px;
+            }
+        }
+
+        .advert-block-path-and-cargo,
+        .advert-block-calendar-and-price,
+        .advert-block-comments {
+            float: left;
+            width: 50%;
+        }
+
+        .advert-block-path,
+        .advert-block-cargo {
+            @include advert-block-right-border();
+        }
+
+        .advert-block-comments,
+        .advert-block-calendar {
+            @include advert-block-left-border();
+        }
+    }
+}
+
+.advert-list {
+    .advert-item {
+        position: relative;
+        background: $content-background;
+        cursor: pointer;
+
+        &.advert-item-alternative {
+            background: $content-background-alternative;
+        }
+
+        &:hover {
+            background: $accent-color-lighten;
+        }
+
+        .icon,
+        a {
+            color: $accent-color;
+        }
+
+        .advert-column {
+            padding: 0 18px;
+            vertical-align: top;
+
+            &.advert-column-track {
+                padding-top: 23px;
+                padding-bottom: 23px;
+            }
+
+            &.advert-column-price {
+                padding-top: 23px;
+                padding-bottom: 23px;
+            }
+        }
+
+        .advert-path {
+            @include font-bold();
+            margin-left: 53px;
+            line-height: 18px;
+            padding: 0 0 10px;
+            min-height: 40px;
+
+            .icon {
+                vertical-align: baseline;
+            }
+        }
+
+        .advert-publisher {
+             margin: 0;
+             @include font-bold();
+             font-size: 1.2em;
+         }
+
+        .advert-details {
+            line-height: 18px;
+            margin-bottom: 10px;
+
+            .icon {
+                display: none;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .advert-price {
+            text-transform: uppercase;
+            white-space: nowrap;
+            color: $accent-color;
+            @include font-bold();
+            font-size: 1.8em;
+            line-height: 1em;
+            margin: 0;
+        }
+
+        .advert-ready-date {
+            margin: 0;
+            line-height: 18px;
+        }
+
+        &.advert-item-cargo {
+            .icon,
+            .advert-price,
+            a {
+                color: $brand;
+            }
+
+            &:hover {
+                background: lighten($brand, 60%);
+            }
+        }
+    }
+
+    &.advert-list-edit {
+        max-width: 1040px;
+        margin: 0 auto;
+    }
+
+    .advert-list-filter {
+        margin: 20px 0 13px;
+    }
+
+    .advert-item-preview {
+        .advert-item {
+            border: 1px solid $border-color;
+            @include border-radius($input-radius);
+            margin: 0 0 7px;
+        }
+
+        .advert-item-actions {
+            margin: 0 0 15px;
+
+            .btn {
+                margin: 0 0 7px;
+            }
+        }
+    }
+
+    &.advert-grid {
+        max-width: 1040px;
+        margin: 0 auto;
+
+        .advert-grid-filter {
+            margin: 20px 0 13px;
+        }
+
+        .advert-grid-row {
+            @include clearfix();
+            margin: 0 0 15px;
+            position: relative;
+
+            .advert-item {
+                border: 1px solid $border-color;
+                @include border-radius($input-radius);
+            }
+
+            &.is-selected {
+                .advert-item-cargo {
+                    border-color: $brand;
+                }
+
+                .advert-item-car {
+                    border-color: $accent-color;
+                }
+            }
+        }
+
+        .advert-grid-checkbox {
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding-top: 20px;
+
+            .checkbox-inline {
+                margin: 0;
+            }
+        }
+
+        .advert-grid-column {
+            margin-left: 26.5px;
+        }
+
+        .advert-grid-actions {
+            padding: 10px 0 0;
+            margin-left: 26.5px;
+
+            .btn {
+                margin: 0 10px 0 0;
+
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+
+        .advert-grid-filter-button-wrapper {
+            display: none;
+        }
+
+        .advert-grid-filters-wrapper {
+            .form-control-group {
+                float: left;
+                margin-left: 15px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        .advert-grid-prolong-button-wrapper {
+            border-top: 1px solid $border-color;
+            background: $content-background;
+            margin: 0 -15px -20px;
+            padding: 20px 15px;
+        }
+    }
+
+    @media screen and (min-width: $tablet-width) {
+        .advert-item {
+            width: 100%;
+            display: table;
+            min-height: 107px;
+
+            &:after {
+                content: '';
+                display: block;
+                background: $border-color;
+                @include box-shadow(0, 0, 1px, $border-color);
+                width: 1px;
+                position: absolute;
+                top: 19px;
+                bottom: 19px;
+                right: 150px;
+            }
+
+            .advert-column {
+                display: table-cell;
+                padding: 23px 10px;
+                vertical-align: top;
+
+                &.advert-column-track {
+                    width: 200px;
+                    padding-right: 0;
+                }
+
+                &.advert-column-price {
+                    width: 150px;
+                    text-align: right;
+                }
+            }
+
+            .advert-details {
+                margin-bottom: 10px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .advert-item-preview {
+            @include clearfix();
+
+            .advert-item {
+                width: 80%;
+                float: left;
+                border: 1px solid $border-color;
+                @include border-radius($input-radius);
+                margin: 0 0 7px;
+            }
+
+            .advert-item-actions {
+                width: 19%;
+                float: right;
+                padding: 13px 0 0;
+                margin: 0;
+            }
+        }
+
+        &.advert-grid {
+            .advert-grid-filter-button-wrapper {
+                display: block;
+                float: left;
+            }
+
+            .advert-grid-filters-wrapper {
+                float: right;
+            }
+
+            .advert-grid-prolong-button-wrapper {
+                display: none;
+            }
+        }
+    }
+
+    @media screen and (min-width: $desktop-width) {
+        .advert-item {
+            &:after {
+                top: 26px;
+                bottom: 26px;
+                right: 165px;
+            }
+
+            .advert-column {
+                padding: 23px 18px;
+
+                &.advert-column-track {
+                    width: 235px;
+                }
+
+                &.advert-column-price {
+                    width: 165px;
+                }
+            }
+
+            .advert-details {
+                margin-bottom: 19px;
+
+                .icon {
+                    margin-right: 5px;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .advert-item-preview {
+            .advert-item {
+                width: 900px;
+            }
+
+            .advert-item-actions {
+                width: 130px;
+            }
+        }
+
+        &.advert-grid {
+            .advert-grid-row {
+                margin-bottom: 10px;
+            }
+
+            .advert-grid-checkbox {
+                padding-top: 35px;
+            }
+
+            .advert-grid-column {
+                margin-left: 32px;
+                margin-right: 145px;
+            }
+
+            .advert-grid-actions {
+                padding: 10px 0 0;
+                margin-left: 0;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 140px;
+
+                .btn {
+                    margin: 0 0 6px;
+
+                    &:last-child {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &.advert-search-list {
+        @media screen and (min-width: $tablet-width) {
+            .advert-item {
+                display: block;
+
+                .advert-column {
+                    display: block;
+                    margin-right: 165px;
+
+                    &.advert-column-track {
+                        width: auto;
+                        padding-right: 0;
+                    }
+
+                    &.advert-column-price {
+                        width: 150px;
+                        text-align: right;
+                        margin-right: 0;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                    }
+                }
+            }
+        }
+
+        @media screen and (min-width: $desktop-width) {
+            .advert-item {
+                display: table;
+
+                .advert-column {
+                    display: table-cell;
+                    margin-right: 0;
+
+                    &.advert-column-track {
+                        width: 235px;
+                    }
+
+                    &.advert-column-price {
+                        width: 165px;
+                        position: static;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.advert-map-wrapper {
+    .label {
+        display: none;
+    }
+
+    &.is-active {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        overflow: auto;
+
+        #advert-map {
+            display: block;
+        }
+
+        .advert-map-view {
+            display: none;
+        }
+
+        .advert-map-actions {
+            display: block;
+        }
+    }
+
+    #advert-map {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+    }
+
+    .advert-map-view {
+        text-align: center;
+        margin-bottom: 12px;
+    }
+
+    .advert-map-actions {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 24px 30px;
+        background: rgba(255, 255, 255, 0.9);
+        display: none;
+    }
+
+    .btn-hide-map {
+        background: $content-background;
+        color: $text;
+        display: none;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 50px;
+        height: 25px;
+        margin-left: -25px;
+        line-height: 25px;
+        text-align: center;
+        @include border-radius(50px 50px 0 0);
+        z-index: 100;
+
+        &.is-toggle {
+            bottom: auto;
+            top: 0;
+            @include border-radius(0 0 100% 100%);
+        }
+
+        .icon {
+            margin-top: 2px;
+            font-size: 20px;
+        }
+
+        .tooltip {
+            display: none;
+            left: 50%;
+            width: 96px;
+            margin: 0 0 0 -48px;
+        }
+
+        &:hover {
+            color: $brand;
+
+            .tooltip {
+                display: block;
+            }
+        }
+    }
+
+    @media screen and (min-width: $tablet-width) {
+        height: 358px;
+        position: relative;
+
+        &.is-active {
+            position: static;
+
+            .advert-map-actions {
+                display: none;
+            }
+        }
+
+        #advert-map {
+            display: block;
+        }
+
+        .advert-map-view {
+            display: none;
+        }
+
+        .advert-map-actions {
+            display: none;
+        }
+
+        .btn-hide-map {
+            display: block;
+        }
+
+        .label {
+            display: block;
+        }
+    }
+}
+
+.tooltip {
+    display: block;
+    position: absolute;
+    bottom: 34px;
+    background: #474544;
+    @include opacity(0.7);
+    text-align: center;
+    color: $negative-text;
+    padding: 10px;
+    @include border-radius($input-radius);
+    line-height: 1em;
+    min-width: 95px;
+
+    &:after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 4px 0 4px;
+        border-color: #474544 transparent transparent transparent;
+        position: absolute;
+        bottom: -4px;
+        left: 50%;
+        margin: 0 0 0 -4px;
+    }
+}
+
+
+.panel-advert-view {
+    font-size: 1.15em;
+    line-height: 20px;
+
+    .advert-price {
+        font-size: 1.5em;
+        line-height: 2em;
+        text-align: center;
+    }
+
+    .advert-comment {
+        line-height: 1.9em;
+    }
+
+    [class*='col-'] {
+        padding: 0 23px;
+    }
+
+    .panel-body {
+        [class*='col-'] {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+    }
+
+    .advert-grid-divider-right {
+        position: relative;
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 1px;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            background: $border-color;
+        }
+    }
+
+    .advert-grid-divider-left {
+        position: relative;
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 1px;
+            top: 0;
+            bottom: 0;
+            left: -1px;
+            background: $border-color;
+        }
+    }
+}
+
+.advert-search-controls {
+    display: table;
+    width: 100%;
+
+    a {
+        display: table-cell;
+        background: $brand;
+        color: $negative-text;
+        text-align: center;
+        vertical-align: middle;
+        text-decoration: none;
+        line-height: 55px;
+
+
+        &.advert-search-control-show-options {
+            border-right: 1px solid darken($brand, 10%);
+        }
+    }
+
+    @media screen and (min-width: $tablet-width) {
+        display: none;
+    }
+}
+
+.panel .panel-header.panel-header-advert-filter {
+    height: 70px;
+    padding: 0 0 0 23px;
+}
+
+.advert-search-filter-header {
+    padding: 15px 0;
+    line-height: 20px;
+    float: left;
+    font-size: 0.9em;
+
+    .advert-average-price {
+        display: block;
+    }
+
+    @media screen and (min-width: $desktop-width) {
+        padding: 6.5px 0;
+        line-height: 37px;
+        font-size: 1em;
+
+        .advert-average-price {
+            display: inline;
+        }
+    }
+
+}
+
+.advert-search-filter {
+    height: 100%;
+    border-left: 1px solid $border-color;
+    padding: 0;
+    float: right;
+
+    .filter-item-order {
+        .dropdown {
+            float: right;
+            width: 0;
+
+            .dropdown-list {
+                top: 0;
+            }
+
+            .dropdown-selected {
+                display: none;
+            }
+        }
+    }
+
+    .filter-item-pager {
+        display: none;
+    }
+
+    .filter-trigger {
+        display: block;
+        width: 70px;
+        line-height: 70px;
+        text-align: center;
+        color: $text-strong;
+
+        &:hover {
+            color: $brand;
+            background: $content-background-alternative;
+        }
+    }
+
+    @media screen and (min-width: $desktop-width) {
+        padding: 6.5px 0;
+
+        .filter-trigger {
+            display: none;
+        }
+
+        .filter-item-order {
+            .dropdown {
+                width: 100px;
+                float: none;
+
+                .dropdown-list {
+                    top: 37px;
+                }
+
+                .dropdown-selected {
+                    display: block;
+                }
+            }
+        }
+
+        .filter-item {
+            float: left;
+            padding-left: 15px;
+            min-height: 1px;
+            display: block;
+        }
+
+        .form-control-group {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.advert-search-left-part {
+    display: none;
+    position: relative;
+
+    &.is-active {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        overflow: auto;
+    }
+
+    @media screen and (min-width: $tablet-width) {
+        display: block;
+        width: $advert-left-part-width - 40px;
+        margin-right: -100%;
+        float: left;
+        padding: 0 10px 0 0;
+
+        &.is-active {
+            position: static;
+            overflow: hidden;
+        }
+    }
+
+    @media screen and (min-width: $desktop-width) {
+        width: $advert-left-part-width;
+        padding-right: 15px;
+    }
+
+    .form .form-control-group.form-control-group-calendar {
+        .form-label-standalone {
+            display: inline-block;
+            min-width: 30px;
+        }
+
+        .dropdown {
+            margin-right: 5px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.advert-search-right-part {
+    margin: 0 -15px;
+
+    @media screen and (min-width: $tablet-width) {
+        float: left;
+        width: 100%;
+        margin: 0;
+        padding-left: $advert-left-part-width - 40px;
+        @include clearfix();
+    }
+
+    @media screen and (min-width: $desktop-width) {
+        padding-left: $advert-left-part-width;
+    }
+}
+
+@media screen and (min-width: $desktop-width) {
+    .panel .panel-header.panel-header-advert-filter {
+        line-height: 40px;
+        padding: 0 23px;
+        height: auto;
+    }
+}

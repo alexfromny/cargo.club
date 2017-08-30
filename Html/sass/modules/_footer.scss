@@ -1,0 +1,179 @@
+#footer {
+    position: relative;
+    z-index: 2;
+
+    @media screen and (min-width: $desktop-width) {
+        margin-top: -$footer-height;
+
+        #wrapper.has-reviews + & {
+            margin-top: -$footer-height - $reviews-height;
+        }
+    }
+
+    .is-overlapped & {
+        z-index: 0;
+
+        @media screen and (min-width: $tablet-width) {
+            z-index: 2;
+        }
+    }
+}
+
+#footer-navigation {
+    background: $footer-bg-color;
+    border-top: 1px solid $footer-border-color;
+
+    @media screen and (min-width: $desktop-width) {
+        height: $footer-height;
+    }
+}
+
+#footer-menu {
+    padding: 35px 0 0;
+    margin: 0 -15px;
+    @include text-shadow(1px, 1px, 0, darken($footer-hover-color, 5%));
+    line-height: 40px;
+    color: $footer-text;
+    font-size: $text-size*0.9;
+    white-space: nowrap;
+    text-align: left;
+
+    ul {
+        font-size: 0;
+        list-style: none;
+        width: 100%;
+
+        li {
+            display: block;
+            font-size: $text-size*0.9;
+
+            .footer-item {
+                display: block;
+                padding: 0 35px;
+            }
+
+            a.footer-item {
+                @include reset-link();
+                color: $footer-text;
+                @include hover-trans();
+
+                &:hover {
+                    color: $negative-text;
+                    background-color: $footer-hover-color;
+                }
+            }
+        }
+    }
+
+    .footer-social {
+        display: block;
+        padding: 0 35px;
+
+        .icon {
+            margin: 8px 0 0 5px;
+            cursor: pointer;
+        }
+    }
+
+    .footer-copyright {
+        line-height: 50px;
+        border-top: 1px solid $footer-hover-color;
+        padding: 0 35px;
+    }
+
+    @media screen and (min-width: $tablet-width) {
+        padding: 30px;
+        margin: 0;
+        @include clearfix();
+
+        ul {
+            display: block;
+            -webkit-column-count: 3;
+            -moz-column-count: 3;
+            column-count: 3;
+            width: 75%;
+            float: left;
+
+            li {
+                line-height: 24px;
+
+                .footer-item {
+                    padding: 0;
+                }
+            }
+        }
+
+        .footer-social,
+        .footer-copyright {
+            float: left;
+            width: 25%;
+            padding: 0 0 0 30px;
+            line-height: 24px;
+            border-left: 1px solid $footer-hover-color;
+        }
+
+        .footer-social {
+            .icon {
+                margin-top: 0;
+            }
+        }
+
+        .footer-copyright {
+            border-top: none;
+        }
+    }
+
+    @media screen and (min-width: $desktop-width) {
+        padding: 0;
+        font-size: $text-size;
+
+        ul {
+            display: table;
+            margin: 0 170px;
+            float: none;
+            width: $content-width - 340px;
+            -webkit-column-count: 1;
+            -moz-column-count: 1;
+            column-count: 1;
+
+            li {
+                font-size: $text-size;
+                display: table-cell;
+                text-align: center;
+                vertical-align: top;
+                line-height: $footer-height - 1px;
+                height: $footer-height - 1px;
+
+                a.footer-item {
+                    padding: 0 23px;
+                }
+            }
+        }
+
+        .footer-social,
+        .footer-copyright {
+            width: 170px;
+            float: none;
+            position: absolute;
+            bottom: 0;
+            padding: 0;
+            line-height: $footer-height - 1px;
+        }
+
+        .footer-social {
+            text-align: right;
+            border-left: 1px solid $footer-border-color;
+            right: 0;
+
+            .icon {
+                margin-top: 15px;
+            }
+        }
+
+        .footer-copyright {
+            left: 0;
+            border-left: none;
+            border-right: 1px solid $footer-border-color;
+        }
+    }
+}

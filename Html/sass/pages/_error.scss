@@ -1,0 +1,51 @@
+.error-page {
+    #content {
+        background: url('../img/error-page-bg.jpg') center center no-repeat;
+        background-size: cover;
+        padding: 0;
+    }
+}
+
+.error-info {
+    text-align: center;
+    color: $negative-text;
+    @include text-shadow(0, 0, 15px, #000);
+    padding: 50px 10px;
+    margin: 0 0 -20px;
+
+    .error-code {
+        @include font-thin();
+        font-size: 150px;
+        line-height: 150px;
+        margin: 0 0 20px;
+    }
+
+    .error-description {
+        @include font-normal();
+        font-size: 20px;
+        line-height: 30px;
+    }
+}
+
+
+@media screen and (min-width: $desktop-width) {
+    .error-page {
+        #content {
+            position: absolute;
+            top: $header-height;
+            bottom: $footer-height + $reviews-height;
+            left: 0;
+            right: 0;
+            min-height: 300px;
+        }
+    }
+
+    .error-info {
+        width: 440px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -110px 0 0 -220px;
+        padding: 0;
+    }
+}

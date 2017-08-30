@@ -1,0 +1,70 @@
+.policy-page {
+    background: $content-background;
+}
+
+.policy-list {
+    display: none;
+    border-left: 5px solid $border-color;
+    padding: 0 20px;
+
+    &.is-fixed {
+        position: fixed;
+        top: 30px;
+    }
+
+    li {
+        position: relative;
+
+        a {
+            color: $text;
+            text-decoration: underline;
+            cursor: pointer;
+            line-height: 22px;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        &.is-active {
+            .a {
+                color: $brand;
+            }
+
+            &:before {
+                content: '';
+                display: block;
+                border-left: 5px solid $brand;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: -25px;
+            }
+        }
+    }
+
+    @media screen and (min-width: $tablet-width) {
+        display: block;
+        float: left;
+        width: 33.3%;
+        max-width: $content-width/3;
+    }
+}
+
+.policy-description {
+    h2 {
+        color: $brand;
+        @include font-normal();
+        font-size: 1.5em;
+        margin: 35px 0 15px;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    @media screen and (min-width: $tablet-width) {
+        float: right;
+        width: 66.6%;
+    }
+}

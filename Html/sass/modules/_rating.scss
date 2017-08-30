@@ -1,0 +1,48 @@
+.rating {
+    font-size: 0;
+    text-align: left;
+
+    .star {
+        background: url('') 0 0 no-repeat;
+        background-size: 100%;
+        width: 18.5px;
+        height: 17.5px;
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 7px;
+
+        &.star-empty {
+            background-image: url('../img/icons/star-empty.png');
+        }
+
+        &.star-half {
+            background-image: url('../img/icons/star-half.png');
+        }
+
+        &.star-full {
+            background-image: url('../img/icons/star-full.png');
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &.rating-editable {
+        .star {
+            cursor: pointer;
+        }
+    }
+}
+
+.rating-review-block {
+    padding: 30px 0 55px;
+    .rating {
+        text-align: center;
+
+        .star {
+            width: 30.5px;
+            height: 29px;
+        }
+    }
+}

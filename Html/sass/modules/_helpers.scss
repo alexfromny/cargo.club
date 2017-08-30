@@ -1,0 +1,117 @@
+.small{
+    font-size: $text-small-size;
+}
+
+.large{
+    font-size: $text-large-size;
+}
+
+@include keyframes(loading-0-100){
+    0% {
+        width: 15px;
+        @include opacity(1);
+    }
+    100% {
+        width: 100%;
+        @include opacity(1);
+    }
+}
+
+@include keyframes(loading-0-25){
+    0% {
+        width: 15px;
+    }
+    100% {
+        width: 25%;
+    }
+}
+
+@include keyframes(loading-25-50){
+    0% {
+        width: 25%;
+    }
+    100% {
+        width: 50%;
+    }
+}
+@include keyframes(loading-50-75){
+    0% {
+        width: 50%;
+    }
+    100% {
+        width: 75%;
+    }
+}
+@include keyframes(loading-75-100){
+    0% {
+        width: 75%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.loading {
+    position: absolute; bottom: -2px; left: 0; z-index: 1;
+    height: 2px;
+    background: $brand;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: -3px;
+        right: -2px;
+        display: block;
+        background: url('../img/loading.png') 0 0 no-repeat;
+        background-size: 100%;
+        width: 46px;
+        height: 8px;
+    }
+    &.loading-0-25{
+        @include animation(loading-0-25, 1, 0.5s);
+        width: 25%;
+    }
+    &.loading-25-50{
+        @include animation(loading-25-50, 1, 0.5s);
+        width: 50%;
+    }
+    &.loading-50-75{
+        @include animation(loading-50-75, 1, 0.5s);
+        width: 75%;
+    }
+    &.loading-75-100{
+        @include animation(loading-75-100, 1, 0.5s);
+        width: 100%;
+    }
+    &.loading-0-100{
+        @include animation(loading-0-100);
+        width: 100%;
+    }
+}
+.clearfix {
+    @include clearfix;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-enlarged {
+    font-size: 1.2em;
+}
+
+.color-brand {
+    color: $brand;
+}
+
+.color-accent {
+    color: $accent-color;
+}

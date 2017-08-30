@@ -1,0 +1,114 @@
+.welcome-search-wrapper {
+    position: relative;
+    z-index: 2;
+    margin: 135px auto 45px;
+    padding: 0 10px;
+    max-width: $welcome-search-width;
+
+    @media screen and (min-width: $tablet-width) {
+        margin: 150px 0;
+    }
+
+    @media screen and (min-width: $desktop-width) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: (-$welcome-search-height/2 - $header-height) 0 0 (-$content-width/2);
+        z-index: 1;
+        padding: 0;
+    }
+}
+
+.welcome-search {
+    .welcome-tabs {
+        display: block;
+        font-size: 0;
+        position: relative;
+        padding: 0 0 5px;
+
+        li {
+            display: inline-block;
+            width: 50%;
+            vertical-align: top;
+            margin-top: 5px;
+
+            a {
+                @include reset-link;
+                display: block;
+                background-color: $accent-color;
+                color: $negative-text;
+                font-size: $text-size;
+                line-height: 50px;
+                text-align: center;
+                @include text-overflow-ellipsis();
+                @include text-shadow(1px, 1px, 0, darken($accent-color, 10%));
+                @include transition(background, $transition-time, ease-in);
+
+                /*&:hover, &:active, &:focus {
+                    background-color: lighten($accent-color, 10%);
+                }*/
+
+                &.cargo {
+                    background-color: $brand;
+                    @include text-shadow(1px, 1px, 0, darken($brand, 10%));
+
+                    /*&:hover, &:active, &:focus {
+                        background-color: lighten($brand, 10%);
+                    }*/
+                }
+            }
+
+            &.is-active {
+                margin-top: 0;
+
+                a {
+                    padding-top: 5px;
+                    @include border-radius($input-radius $input-radius 0 0);
+                }
+
+                &:after {
+                    content: '';
+                    display: block;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    border-bottom: 5px solid $brand;
+                    position: absolute;
+                }
+            }
+
+            &:first-child {
+                a {
+                    @include border-radius($input-radius 0 0 0);
+                }
+            }
+
+            &:last-child {
+                a {
+                    @include border-radius(0 $input-radius 0 0);
+                }
+
+                &.is-active {
+                    &:after {
+                        border-color: $accent-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .welcome-tabs-content {
+        display: none;
+        padding: 18px 23px;
+        background-color: $content-background;
+        @include border-radius(0 0 $input-radius $input-radius);
+
+        &.is-active {
+            display: block;
+        }
+
+        .form-block {
+            margin: 0 -23px;
+        }
+    }
+}

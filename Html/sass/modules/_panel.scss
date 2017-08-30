@@ -1,0 +1,167 @@
+.panel {
+    border: 1px solid $border-color;
+    background: $content-background;
+    color: $text;
+    @include box-shadow(0, 0, 3px, $border-color);
+    @include border-radius(3px);
+    margin-bottom: 12px;
+
+    .panel-header {
+        @include clearfix();
+        border-bottom: 1px solid $border-color;
+        line-height: 40px;
+        padding: 0 23px;
+    }
+
+    @media screen and (min-width: $tablet-width) {
+        .panel-header-title {
+            float: left;
+        }
+
+        .panel-header-controls {
+            float: right;
+        }
+    }
+
+    .panel-body {
+        padding: 15px 23px;
+
+        &.panel-body-solid {
+            padding: 15px 10px;
+        }
+
+        &.panel-body-form {
+            background: $content-background-alternative;
+            font-size: $text-large-size;
+
+            @media screen and (min-width: $tablet-width) {
+                background: -webkit-linear-gradient(left, $content-background-alternative 45%, $content-background 45%);
+                background: -moz-linear-gradient(left, $content-background-alternative 45%, $content-background 45%);
+                background: -o-linear-gradient(left, $content-background-alternative 45%, $content-background 45%);
+                background: -ms-linear-gradient(left, $content-background-alternative 45%, $content-background 45%);
+                background: linear-gradient(left, $content-background-alternative 45%, $content-background 45%);
+            }
+        }
+
+        &.panel-body-forbidden {
+            background: $content-background-alternative;
+            padding: 25px 23px 50px;
+
+            h5 {
+                @include font-thin();
+                font-size: 1.6em;
+                margin: 0 0 10px;
+            }
+
+            a {
+                color: $text-strong;
+            }
+        }
+    }
+
+    .panel-subheader {
+        line-height: 40px;
+        padding: 0 23px;
+        background: $content-background-alternative;
+
+        &.panel-subheader-solid {
+            padding: 0 10px;
+        }
+    }
+
+    .panel-pager {
+        @include clearfix();
+        border-top: 1px solid $border-color;
+        padding: 30px 0;
+        font-size: 0;
+
+        .pager-previous {
+            float: left;
+            min-height: 1px;
+            width: 15%;
+            padding: 0 0 0 20px;
+            text-align: left;
+        }
+
+        .pager-next {
+            min-height: 1px;
+            float: left;
+            width: 15%;
+            padding: 0 20px 0 0;
+            text-align: right;
+        }
+
+        .pager-selector {
+            min-height: 1px;
+            float: left;
+            width: 70%;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .pager-item {
+            @include reset-link();
+            @include hover-trans();
+            display: inline-block;
+            border: 2px solid transparent;
+            @include border-radius($input-radius);
+            font-size: $text-size;
+            line-height: $text-size;
+            min-width: 25px;
+            text-align: center;
+            padding: 4px 3px;
+
+            &.is-selected {
+                border-color: $brand;
+                color: $brand;
+            }
+        }
+
+        a.pager-item {
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &.is-selected {
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .link-btn {
+            font-size: $text-size;
+            line-height: 25px;
+            color: $text;
+            display: inline-block;
+
+            .icon {
+                margin-top: 0;
+            }
+        }
+
+        .pager-previous,
+        .pager-next {
+            white-space: nowrap;
+
+            span {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: $tablet-width) {
+            .pager-selector {
+                width: 50%;
+            }
+
+            .pager-previous,
+            .pager-next {
+                width: 25%;
+
+                span {
+                    display: inline;
+                }
+            }
+        }
+    }
+}

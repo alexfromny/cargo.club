@@ -1,0 +1,22 @@
+.info-table {
+	width: 100%;
+
+	td, th {
+		text-align: left;
+		vertical-align: top;
+		font-weight: 400;
+		padding: 10px 0 0;
+	}
+
+	tr:last-child {
+		td, th {
+			padding-bottom: 10px;
+		}
+	}
+
+	&.info-table-equal {
+		td, th {
+			width: 50%;
+		}
+	}
+}

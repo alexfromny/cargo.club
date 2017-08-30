@@ -1,0 +1,51 @@
+#content {
+    padding-top: $header-bottom-offset;
+    z-index: 3;
+
+    &.welcome-page {
+        padding-top: 0;
+        //min-height: $welcome-search-height + 60px;
+    }
+
+    &.user-adverts-page {
+        background: $content-background-alternative;
+    }
+
+    /*.is-overlapped & {
+        z-index: 0;
+
+        @media screen and (min-width: $tablet-width) {
+            z-index: 3;
+        }
+    }*/
+}
+
+.is-loading {
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(#000, 0.5);
+        z-index: 100;
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 36px;
+        height: 36px;
+        margin: -18px 0 0 -18px;
+        background: url('../img/icons/spinner.gif') center center no-repeat;
+        background-size: 100%;
+        z-index: 200;
+    }
+}

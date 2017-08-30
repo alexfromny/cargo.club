@@ -1,0 +1,66 @@
+.contact-page {
+    background: $content-background;
+}
+
+.contacts-list {
+    font-size: 0;
+    color: $text-silver;
+    text-align: left;
+
+    .contact-item {
+        display: inline-block;
+        width: 100%;
+        font-size: $text-size;
+        margin: 0 0 25px;
+        vertical-align: top;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        p {
+            margin: 0 0 8px;
+        }
+    }
+
+    .contact-header {
+        @include font-thin();
+        height: 40px;
+        line-height: 20px;
+        font-size: 1.8em;
+    }
+
+    .contact-map {
+        height: 225px;
+        margin: 20px 0 0;
+        border: 1px solid $border-color;
+        @include border-radius($input-radius);
+    }
+
+    @media screen and (min-width: $tablet-width) {
+        .contact-item {
+            display: inline-block;
+            width: 47%;
+            margin: 0 6% 25px 0;
+
+            &:nth-child(2n) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    @media screen and (min-width: $desktop-width) {
+        .contact-item {
+            width: 260px;
+            margin: 0 66px 25px 0;
+
+            &:nth-child(2n) {
+                margin-right: 66px;
+            }
+
+            &:nth-child(4n) {
+                margin-right: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en" xml:lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="en" xml:lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie10 lt-ie9" lang="en" xml:lang="en"> <![endif]-->
+<!--[if IE 9]><html class="no-js lt-ie10 ie9" lang="en" xml:lang="en"> <![endif]-->
+<!--[if IE]><html class="no-js ie" lang="en" xml:lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en" xml:lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cargo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui/jquery-ui.theme.min.css">
+    <link rel="stylesheet" type="text/css" href="css/simplegrid.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="js/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="js/owl-carousel/owl.transitions.css">
+    <link rel="stylesheet" type="text/css" href="js/owl-carousel/owl.theme.css">
+</head>
+<body>
+    <div id="wrapper">
+        <header id="header">
+            <div class="content">
+                <div class="menu-toggle-wrapper">
+                    <a href="#" class="menu-toggle"><i class="icon icon-options"></i></a>
+                </div>
+
+                <div class="logo-wrapper">
+                    <a href="/" id="logo"></a>
+                </div>
+
+                <div class="header-settings-wrapper">
+                    <div class="language-wrapper">
+                        <div class="dropdown dropdown-full-width">
+                            <div class="dropdown-selected"><i class="icon icon-flag icon-flag-ru"></i> <span class="language-name">RU</span></div>
+                            <div class="dropdown-list">
+                                <div class="dropdown-item" data-value="en"><i class="icon icon-flag icon-flag-en"></i> <span class="language-name">EN</span></div>
+                                <div class="dropdown-item" data-value="de"><i class="icon icon-flag icon-flag-de"></i> <span class="language-name">DE</span></div>
+                                <div class="dropdown-item" data-value="ru"><i class="icon icon-flag icon-flag-ru"></i> <span class="language-name">RU</span></div>
+                                <div class="dropdown-item" data-value="fr"><i class="icon icon-flag icon-flag-fr"></i> <span class="language-name">FR</span></div>
+                                <div class="dropdown-item" data-value="it"><i class="icon icon-flag icon-flag-it"></i> <span class="language-name">IT</span></div>
+                                <div class="dropdown-item" data-value="pl"><i class="icon icon-flag icon-flag-pl"></i> <span class="language-name">PL</span></div>
+                                <div class="dropdown-item" data-value="lt"><i class="icon icon-flag icon-flag-lt"></i> <span class="language-name">LT</span></div>
+                                <div class="dropdown-item" data-value="lv"><i class="icon icon-flag icon-flag-lv"></i> <span class="language-name">LV</span></div>
+                                <div class="dropdown-item" data-value="et"><i class="icon icon-flag icon-flag-et"></i> <span class="language-name">ET</span></div>
+                                <div class="dropdown-item" data-value="ua"><i class="icon icon-flag icon-flag-ua"></i> <span class="language-name">UA</span></div>
+                                <div class="dropdown-item" data-value="cz"><i class="icon icon-flag icon-flag-cz"></i> <span class="language-name">CZ</span></div>
+                                <div class="dropdown-item" data-value="sk"><i class="icon icon-flag icon-flag-sk"></i> <span class="language-name">SK</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="currency-wrapper">
+                        <div class="dropdown dropdown-currency">
+                            <div class="dropdown-selected">EUR</div>
+                            <div class="dropdown-list">
+                                <div class="currency-group">
+                                    <div class="currency-header">Основные валюты:</div>
+
+                                    <div class="currency-item is-selected"><b>EUR</b> Евро</div>
+                                    <div class="currency-item"><b>USD</b> Доллар</div>
+                                    <div class="currency-item "><b>RUB</b> Российский рубль</div>
+                                </div>
+
+                                <div class="currency-group">
+                                    <div class="currency-header">Все валюты:</div>
+
+                                    <div class="currency-item"><b>PLN</b> Польский злотый</div>
+                                    <div class="currency-item"><b>BYR</b> Белорусский рубль</div>
+                                    <div class="currency-item"><b>UAH</b> Украинская гривна</div>
+                                    <div class="currency-item"><b>KZT</b> Казахстанский тенге</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-wrapper">
+                    <nav id="menu">
+                        <ul class="top-menu">
+                            <li class="menu-item menu-item-profile">
+                                <a href="#"><span class="header-profile-name">ОАО БелТрансЭкспо</span> <span class="header-profile-icon" style="background-image: url('img/test/company.png')"></span></a>
+
+                                <ul class="submenu">
+                                    <li><a href="#">Мой профиль</a></li>
+                                    <li><a href="#">Мои объявления</a></li>
+                                    <li><a href="#">Подписка <span class="small">(бесплатная)</span> <span class="menu-accent">Улучшить!</span></a></li>
+                                    <li><a href="#">Выйти</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">Главная <i class="icon icon-home"></i></a>
+                            </li>
+                            <li class="menu-item menu-item-add-advert">
+                                <a href="#">Добавить объявление <i class="icon icon-advert-add"></i></a>
+
+                                <ul class="submenu">
+                                    <li><a href="#">Добавить транспорт <i class="icon icon-car"></i></a></li>
+                                    <li><a href="#">Добавить груз <i class="icon icon-cargo"></i></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="loading loading-25-50"></div>
+        </header>
+
+        <article id="content">
+            <div class="content">
+                <div class="advert-search-left-part">
+                    <div class="welcome-search">
+                        <ul class="welcome-tabs">
+                            <li class="is-active" data-tab="cargo">
+                                <a class="cargo" href="#"><i class="icon icon-cargo"></i> Ищу груз</a>
+                            </li>
+                            <li data-tab="transport">
+                                <a class="transport" href="#"><i class="icon icon-car"></i> Ищу транспорт</a>
+                            </li>
+                        </ul>
+                        <div class="welcome-tabs-content is-active" data-tab="cargo">
+                            <div class="form">
+                                <div class="form-block">
+                                    <div class="form-block-title">Место погрузки:</div>
+                                    <div class="form-control-group">
+                                        <label class="form-label">Где:</label>
+                                        <input type="text" class="form-control form-control-full-width" value="Москва" />
+                                    </div>
+                                    <a href="#" class="link-btn"><span>Добавить место погрузки</span> <i class="icon icon-plus"></i></a>
+                                </div>
+
+                                <div class="form-block">
+                                    <div class="form-block-title">Место выгрузки:</div>
+                                    <div class="form-control-group">
+                                        <label class="form-label">Где:</label>
+                                        <input type="text" class="form-control form-control-full-width" value="" />
+                                        <input type="text" class="form-control form-control-full-width" value="" />
+                                    </div>
+                                    <a href="#" class="link-btn"><span>Добавить место выгрузки</span> <i class="icon icon-plus"></i></a>
+                                </div>
+
+                                <div class="form-block">
+                                    <div class="form-block-title">Дата погрузки:</div>
+
+                                    <div class="form form-horizontal">
+                                        <div class="form-control-group form-control-group-calendar mobile-only">
+                                            <label class="form-label-standalone">C:</label>
+                                            <input type="date" placeholder="Выбрать дату" />
+                                        </div>
+
+                                        <div class="form-control-group form-control-group-calendar desktop-only">
+                                            <label class="form-label-standalone">C:</label>
+
+                                            <div class="dropdown dropdown-full-width" style="width: 70px">
+                                                <div class="dropdown-selected">День</div>
+                                                <div class="dropdown-list">
+                                                    <div class="dropdown-item" data-value="1">1</div>
+                                                    <div class="dropdown-item" data-value="2">2</div>
+                                                    <div class="dropdown-item" data-value="3">3</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="dropdown dropdown-full-width" style="width: 100px">
+                                                <div class="dropdown-selected">Месяц</div>
+                                                <div class="dropdown-list">
+                                                    <div class="dropdown-item" data-value="1">Январь</div>
+                                                    <div class="dropdown-item" data-value="2">Февраль</div>
+                                                    <div class="dropdown-item" data-value="3">Март</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-control-group form-control-group-calendar mobile-only">
+                                            <label class="form-label-standalone">До:</label>
+                                            <input type="date" placeholder="Выбрать дату" />
+                                        </div>
+
+                                        <div class="form-control-group form-control-group-calendar desktop-only">
+                                            <label class="form-label-standalone">До:</label>
+
+                                            <div class="dropdown dropdown-full-width" style="width: 70px">
+                                                <div class="dropdown-selected">День</div>
+                                                <div class="dropdown-list">
+                                                    <div class="dropdown-item" data-value="1">1</div>
+                                                    <div class="dropdown-item" data-value="2">2</div>
+                                                    <div class="dropdown-item" data-value="3">3</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="dropdown dropdown-full-width" style="width: 100px">
+                                                <div class="dropdown-selected">Месяц</div>
+                                                <div class="dropdown-list">
+                                                    <div class="dropdown-item" data-value="1">Январь</div>
+                                                    <div class="dropdown-item" data-value="2">Февраль</div>
+                                                    <div class="dropdown-item" data-value="3">Март</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-block">
+                                    <div class="form-block-title">Информация о грузе:</div>
+                                    <div class="form-control-group">
+                                        <label class="form-label">Наименование груза:</label>
+                                        <div class="dropdown dropdown-full-width">
+                                            <div class="dropdown-selected">Деревянные изделия</div>
+                                            <div class="dropdown-list">
+                                                <div class="dropdown-item" data-value="1">Деревянные изделия</div>
+                                                <div class="dropdown-item" data-value="2">Металические изделия</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-control-group">
+                                        <label class="form-label">Вид загрузки:</label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox"/> Задняя
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" checked="checked" /> Боковая
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox"/> Верхняя
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-block">
+                                    <div class="form-block-title">Ценовой диапазон (руб):</div>
+
+                                    <div class="form-range-control-group">
+                                        <div class="form-control-group">
+                                            <label class="form-label">От:</label>
+                                            <input type="text" class="form-control form-control-small" value="" id="min-price" />
+                                        </div>
+                                        <div class="form-range-divider"></div>
+                                        <div class="form-control-group">
+                                            <label class="form-label">До:</label>
+                                            <input type="text" class="form-control form-control-small" value="" id="max-price" />
+                                        </div>
+                                    </div>
+                                    <div class="form-range-slider-wrapper desktop-only">
+                                        <div class="form-range-slider"></div>
+                                        <div class="form-range-slider-min">0 р.</div>
+                                        <div class="form-range-slider-max">100 000 р.</div>
+                                    </div>
+                                </div>
+
+                                <div class="button-group">
+                                    <button class="btn btn-primary btn-big btn-full-width advert-search-control-show-options">Поехали <i class="icon icon-path"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="welcome-tabs-content accent-content" data-tab="transport">
+                            <div class="form">
+                                <div class="form-block">
+                                    <div class="form-block-title">Место погрузки:</div>
+                                    <div class="form-control-group">
+                                        <label class="form-label">Где:</label>
+                                        <input type="text" class="form-control form-control-full-width" value="Москва" />
+                                    </div>
+                                    <a href="#" class="link-btn"><span>Добавить место погрузки</span> <i class="icon icon-plus"></i></a>
+                                </div>
+
+                                <div class="form-block">
+                                    <div class="form-block-title">Место выгрузки:</div>
+                                    <div class="form-control-group">
+                                        <label class="form-label">Где:</label>
+                                        <input type="text" class="form-control form-control-full-width" value="" />
+                                        <input type="text" class="form-control form-control-full-width" value="" />
+                                    </div>
+                                    <a href="#" class="link-btn"><span>Добавить место выгрузки</span> <i class="icon icon-plus"></i></a>
+                                </div>
+
+                                <div class="form-block">
+                                    <div class="form-block-title">Дата погрузки:</div>
+
+                                    <div class="form form-horizontal">
+                                        <div class="form-control-group form-control-group-calendar mobile-only">
+                                            <label class="form-label-standalone">C:</label>
+                                            <input type="date" placeholder="Выбрать дату" />
+                                        </div>
+
+                                        <div class="form-control-group form-control-group-calendar desktop-only">
+                                            <label class="form-label-standalone">C:</label>
+
+                                            <div class="dropdown dropdown-full-width" style="width: 70px">
+                                                <div class="dropdown-selected">День</div>
+                                                <div class="dropdown-list">
+                                                    <div class="dropdown-item" data-value="1">1</div>
+                                                    <div class="dropdown-item" data-value="2">2</div>
+                                                    <div class="dropdown-item" data-value="3">3</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="dropdown dropdown-full-width" style="width: 100px">
+                                                <div class="dropdown-selected">Месяц</div>
+                                                <div class="dropdown-list">
+                                                    <div class="dropdown-item" data-value="1">Январь</div>
+                                                    <div class="dropdown-item" data-value="2">Февраль</div>
+                                                    <div class="dropdown-item" data-value="3">Март</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-control-group form-control-group-calendar mobile-only">
+                                            <label class="form-label-standalone">До:</label>
+                                            <input type="date" placeholder="Выбрать дату" />
+                                        </div>
+
+                                        <div class="form-control-group form-control-group-calendar desktop-only">
+                                            <label class="form-label-standalone">До:</label>
+
+                                            <div class="dropdown dropdown-full-width" style="width: 70px">
+                                                <div class="dropdown-selected">День</div>
+                                                <div class="dropdown-list">
+                                                    <div class="dropdown-item" data-value="1">1</div>
+                                                    <div class="dropdown-item" data-value="2">2</div>
+                                                    <div class="dropdown-item" data-value="3">3</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="dropdown dropdown-full-width" style="width: 100px">
+                                                <div class="dropdown-selected">Месяц</div>
+                                                <div class="dropdown-list">
+                                                    <div class="dropdown-item" data-value="1">Январь</div>
+                                                    <div class="dropdown-item" data-value="2">Февраль</div>
+                                                    <div class="dropdown-item" data-value="3">Март</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-block">
+                                    <div class="form-block-title">Информация о грузе:</div>
+                                    <div class="form-control-group">
+                                        <label class="form-label">Наименование груза:</label>
+                                        <div class="dropdown dropdown-full-width">
+                                            <div class="dropdown-selected">Деревянные изделия</div>
+                                            <div class="dropdown-list">
+                                                <div class="dropdown-item" data-value="1">Деревянные изделия</div>
+                                                <div class="dropdown-item" data-value="2">Металические изделия</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-control-group">
+                                        <label class="form-label">Вид загрузки:</label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox"/> Задняя
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" checked="checked" /> Боковая
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox"/> Верхняя
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-block">
+                                    <div class="form-block-title">Ценовой диапазон (руб):</div>
+
+                                    <div class="form-range-control-group">
+                                        <div class="form-control-group">
+                                            <label class="form-label">От:</label>
+                                            <input type="text" class="form-control form-control-small" value="" id="min-price" />
+                                        </div>
+                                        <div class="form-range-divider"></div>
+                                        <div class="form-control-group">
+                                            <label class="form-label">До:</label>
+                                            <input type="text" class="form-control form-control-small" value="" id="max-price" />
+                                        </div>
+                                    </div>
+                                    <div class="form-range-slider-wrapper desktop-only">
+                                        <div class="form-range-slider"></div>
+                                        <div class="form-range-slider-min">0 р.</div>
+                                        <div class="form-range-slider-max">100 000 р.</div>
+                                    </div>
+                                </div>
+
+                                <div class="button-group">
+                                    <button class="btn btn-primary btn-big btn-full-width advert-search-control-show-options">Поехали <i class="icon icon-path"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="advert-search-right-part">
+                    <div class="panel">
+                        <div class="advert-map-wrapper">
+                            <div class="label label-cargo"></div>
+                            <div id="advert-map"></div>
+                            <div class="advert-map-actions">
+                                <a href="#" class="btn btn-primary btn-big btn-full-width" id="advert-map-close"><i class="icon icon-arrow-left"></i> Вернуться к поиску</a>
+                            </div>
+                            <a href="#" class="btn-hide-map"><i class="icon icon-trigger-up"></i><span class="tooltip">Свернуть</span></a>
+                        </div>
+
+                        <div class="advert-search-controls">
+                            <a href="#" class="advert-search-control-show-options"><i class="icon icon-settings"></i> Параметры поиска</a>
+                            <a href="#" class="advert-search-control-show-map"><i class="icon icon-point"></i> На карте</a>
+                        </div>
+
+                        <div class="panel-header panel-header-advert-filter">
+                            <div class="advert-search-filter-header">
+                                <span class="text-enlarged">Найдено: <strong>135 объявлений</strong></span> <span class="advert-average-price">(Средняя цена: 7341руб.)</span>
+                            </div>
+
+                            <div class="advert-search-filter form">
+                                <div class="filter-item filter-item-order">
+                                    <a href="#" class="filter-trigger"><i class="icon icon-expand"></i></a>
+
+                                    <div class="dropdown dropdown-switch">
+                                        <div class="dropdown-selected">Фильтры</div>
+                                        <div class="dropdown-list">
+                                            <div class="switch-group">
+                                                <div class="switch-header">Цена</div>
+
+                                                <div class="switch-item">От наивысшей</div>
+                                                <div class="switch-item">От наинизшей</div>
+                                                <div class="switch-item is-selected">Не фильтровать</div>
+                                            </div>
+                                            <div class="switch-group">
+                                                <div class="switch-header">Дата подачи</div>
+
+                                                <div class="switch-item is-selected">За сегодня</div>
+                                                <div class="switch-item">За прошедшую неделю</div>
+                                                <div class="switch-item">За месяц</div>
+                                                <div class="switch-item">Не фильтровать</div>
+                                            </div>
+
+                                            <div class="switch-apply">
+                                                <a href="#" class="btn btn-primary btn-full-width">Применить</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="filter-item filter-item-pager">
+                                    <div class="form-control-group">
+                                        <label class="form-label-inline">Показывать:</label>
+
+                                        <div class="dropdown" style="width: 60px;">
+                                            <div class="dropdown-selected">10</div>
+                                            <div class="dropdown-list">
+                                                <div class="dropdown-item" data-value="1">10</div>
+                                                <div class="dropdown-item" data-value="2">20</div>
+                                                <div class="dropdown-item" data-value="3">50</div>
+                                                <div class="dropdown-item" data-value="3">100</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="advert-list advert-search-list">
+                            <div class="advert-item advert-item-cargo">
+                                <div class="label label-cargo"></div>
+                                <div class="advert-column advert-column-track">
+                                    <div class="advert-path">
+                                        <span class="icon icon-path"></span> Минск &rarr; Москва
+                                    </div>
+                                    <p class="advert-publisher"><a href="#">ОАО "БелТрансЭкспо"</a></p>
+                                </div>
+                                <div class="advert-column">
+                                    <p class="advert-details">
+                                        <span class="icon icon-cargo"></span>
+                                        <b>Тип:</b> Дерево&nbsp;&nbsp;&nbsp;
+                                        <b>Вес:</b> 2т.&nbsp;&nbsp;&nbsp;
+                                        <b>Объем:</b> 20м&sup3;&nbsp;&nbsp;&nbsp;
+                                        <b>Погрузка:</b> боковая
+                                    </p>
+                                    <p class="advert-details">
+                                        <span class="icon icon-comment"></span>
+                                        Для перевозки деревянной продукции ищем транспорт ...
+                                    </p>
+                                </div>
+                                <div class="advert-column advert-column-price">
+                                    <p class="advert-price">3 500 RUB</p>
+                                    <p class="advert-ready-date">
+                                        <b>Готов к отправке:</b><br />
+                                        22.01.2015
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="advert-item advert-item-cargo advert-item-alternative">
+                                <div class="label label-cargo"></div>
+                                <div class="advert-column advert-column-track">
+                                    <div class="advert-path">
+                                        <span class="icon icon-path"></span> Минск &rarr; Москва
+                                    </div>
+                                    <p class="advert-publisher"><a href="#">ОАО "БелТрансЭкспо"</a></p>
+                                </div>
+                                <div class="advert-column">
+                                    <p class="advert-details">
+                                        <span class="icon icon-cargo"></span>
+                                        <b>Тип:</b> Дерево&nbsp;&nbsp;&nbsp;
+                                        <b>Вес:</b> 2т.&nbsp;&nbsp;&nbsp;
+                                        <b>Объем:</b> 20м&sup3;&nbsp;&nbsp;&nbsp;
+                                        <b>Погрузка:</b> боковая
+                                    </p>
+                                    <p class="advert-details">
+                                        <span class="icon icon-comment"></span>
+                                        Для перевозки деревянной продукции ищем транспорт ...
+                                    </p>
+                                </div>
+                                <div class="advert-column advert-column-price">
+                                    <p class="advert-price">3 500 RUB</p>
+                                    <p class="advert-ready-date">
+                                        <b>Готов к отправке:</b><br />
+                                        22.01.2015
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="advert-item advert-item-cargo">
+                                <div class="label label-cargo"></div>
+                                <div class="advert-column advert-column-track">
+                                    <div class="advert-path">
+                                        <span class="icon icon-path"></span> Минск &rarr; Москва
+                                    </div>
+                                    <p class="advert-publisher"><a href="#">ОАО "БелТрансЭкспо"</a></p>
+                                </div>
+                                <div class="advert-column">
+                                    <p class="advert-details">
+                                        <span class="icon icon-cargo"></span>
+                                        <b>Тип:</b> Дерево&nbsp;&nbsp;&nbsp;
+                                        <b>Вес:</b> 2т.&nbsp;&nbsp;&nbsp;
+                                        <b>Объем:</b> 20м&sup3;&nbsp;&nbsp;&nbsp;
+                                        <b>Погрузка:</b> боковая
+                                    </p>
+                                    <p class="advert-details">
+                                        <span class="icon icon-comment"></span>
+                                        Для перевозки деревянной продукции ищем транспорт ...
+                                    </p>
+                                </div>
+                                <div class="advert-column advert-column-price">
+                                    <p class="advert-price">3 500 RUB</p>
+                                    <p class="advert-ready-date">
+                                        <b>Готов к отправке:</b><br />
+                                        22.01.2015
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="advert-item advert-item-cargo advert-item-alternative">
+                                <div class="label label-cargo"></div>
+                                <div class="advert-column advert-column-track">
+                                    <div class="advert-path">
+                                        <span class="icon icon-path"></span> Минск &rarr; Москва
+                                    </div>
+                                    <p class="advert-publisher"><a href="#">ОАО "БелТрансЭкспо"</a></p>
+                                </div>
+                                <div class="advert-column">
+                                    <p class="advert-details">
+                                        <span class="icon icon-cargo"></span>
+                                        <b>Тип:</b> Дерево&nbsp;&nbsp;&nbsp;
+                                        <b>Вес:</b> 2т.&nbsp;&nbsp;&nbsp;
+                                        <b>Объем:</b> 20м&sup3;&nbsp;&nbsp;&nbsp;
+                                        <b>Погрузка:</b> боковая
+                                    </p>
+                                    <p class="advert-details">
+                                        <span class="icon icon-comment"></span>
+                                        Для перевозки деревянной продукции ищем транспорт ...
+                                    </p>
+                                </div>
+                                <div class="advert-column advert-column-price">
+                                    <p class="advert-price">3 500 RUB</p>
+                                    <p class="advert-ready-date">
+                                        <b>Готов к отправке:</b><br />
+                                        22.01.2015
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="advert-item advert-item-cargo">
+                                <div class="label label-cargo"></div>
+                                <div class="advert-column advert-column-track">
+                                    <div class="advert-path">
+                                        <span class="icon icon-path"></span> Минск &rarr; Москва
+                                    </div>
+                                    <p class="advert-publisher"><a href="#">ОАО "БелТрансЭкспо"</a></p>
+                                </div>
+                                <div class="advert-column">
+                                    <p class="advert-details">
+                                        <span class="icon icon-cargo"></span>
+                                        <b>Тип:</b> Дерево&nbsp;&nbsp;&nbsp;
+                                        <b>Вес:</b> 2т.&nbsp;&nbsp;&nbsp;
+                                        <b>Объем:</b> 20м&sup3;&nbsp;&nbsp;&nbsp;
+                                        <b>Погрузка:</b> боковая
+                                    </p>
+                                    <p class="advert-details">
+                                        <span class="icon icon-comment"></span>
+                                        Для перевозки деревянной продукции ищем транспорт ...
+                                    </p>
+                                </div>
+                                <div class="advert-column advert-column-price">
+                                    <p class="advert-price">3 500 RUB</p>
+                                    <p class="advert-ready-date">
+                                        <b>Готов к отправке:</b><br />
+                                        22.01.2015
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel-pager">
+                            <div class="pager-previous">
+                                <a href="#" class="link-btn is-reverted"><i class="icon icon-arrow-left"></i> <span>Предыдущая</span></a>
+                            </div>
+                            <div class="pager-selector">
+                                <a href="#" class="pager-item">1</a>
+                                <a href="#" class="pager-item is-selected">2</a>
+                                <a href="#" class="pager-item">3</a>
+                                <a href="#" class="pager-item">4</a>
+                                <a href="#" class="pager-item">5</a>
+                                <span class="pager-item">...</span>
+                                <a href="#" class="pager-item">13</a>
+                            </div>
+                            <div class="pager-next">
+                                <a href="#" class="link-btn is-reverted"><span>Предыдущая</span> <i class="icon icon-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <footer id="footer">
+        <div id="footer-navigation">
+            <div class="content">
+                <nav id="footer-menu">
+                    <ul>
+                        <li><a class="footer-item" href="#">Подписка</a></li>
+                        <li><a class="footer-item" href="#">Поддержка</a></li>
+                        <li><a class="footer-item" href="#">Политика конфиденциальности</a></li>
+                        <li><a class="footer-item" href="#">Правила использования</a></li>
+                        <li><a class="footer-item" href="#">Контакты</a></li>
+                        <li><a class="footer-item" href="#">О нас</a></li>
+                    </ul>
+                    <div class="footer-social">Мы в соц-сетях <a href="#" class="icon icon-facebook"></a></div>
+                    <div class="footer-copyright">&copy; 2015 Cargo.club</div>
+                </nav>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/owl-carousel/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/common-scripts.js"></script>
+
+    <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script>
+        ymaps.ready(function () {
+            var myMap = new ymaps.Map('advert-map', {
+                center: [55.751574, 37.573856],
+                zoom: 9,
+                controls: ['zoomControl']
+            });
+        });
+    </script>
+</body>
+</html>

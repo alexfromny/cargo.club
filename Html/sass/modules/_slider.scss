@@ -1,0 +1,133 @@
+#wrapper {
+    position: relative;
+}
+
+.slider-container {
+    position: absolute;
+    top: $header-height;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 1;
+
+    .slider-item {
+        position: relative;
+        height: 100%;
+        background: url('') center center no-repeat;
+        background-size: cover;
+
+        .slider-text {
+            color: $negative-text;
+            font-size: 16px;
+            line-height: 1em;
+            text-align: center;
+            padding: 40px 0 0;
+            @include font-thin();
+
+            .large {
+                display: block;
+                margin-bottom: 15px;
+                font-size: 30px;
+                line-height: 1em;
+            }
+        }
+    }
+
+    @media screen and (min-width: $tablet-width) {
+        .slider-item {
+            .slider-text {
+                position: absolute;
+                top: 50%;
+                left: 355px;
+                margin: -65px 0 0;
+                z-index: 2;
+                max-width: 370px;
+                font-size: 14px;
+                text-align: left;
+                @include text-shadow(0, 0, 15px, #000);
+
+                .large {
+                    margin-bottom: 30px;
+                    font-size: 32px;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: $desktop-width) {
+        bottom: $reviews-height + $footer-height;
+
+        .slider-item {
+            position: relative;
+            height: 100%;
+            background: url('') center center no-repeat;
+            background-size: cover;
+
+            .slider-text {
+                left: 50%;
+                margin: -65px 0 0 (-$content-width/2 + $welcome-search-width + 50px);
+                max-width: 550px;
+                font-size: 25px;
+
+                .large {
+                    font-size: 50px;
+                }
+            }
+        }
+    }
+}
+
+.owl-cargo-theme {
+    position: absolute !important;;
+
+    .owl-wrapper-outer {
+        position: absolute !important;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .owl-wrapper {
+        height: 100%;
+    }
+
+    .owl-item {
+        height: 100%;
+    }
+
+    .owl-controls {
+        position: absolute;
+        bottom: 20px;
+        right: 10px;
+        text-align: right;
+        line-height: 0;
+
+        @media screen and (min-width: $desktop-width) {
+            bottom: 125px;
+            right: 50%;
+            margin: 0 (-$content-width/2) 0 0;
+        }
+    }
+
+    .owl-page {
+        display: inline-block;
+        font-size: 0;
+        margin: 0 0 0 7px;
+
+        span {
+            display: block;
+            width: 18px;
+            height: 5px;
+            background: #797c7f;
+            @include border-radius(5px);
+        }
+
+        &.active {
+            span {
+                background: #FFF;
+            }
+        }
+    }
+}

@@ -1,0 +1,309 @@
+.dropdown {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    font-size: $text-size;
+    z-index: 10;
+    
+    .dropdown-selected {
+        background: $content-background;
+        @include border-radius($input-radius);
+        border: 1px solid $input-border-color;
+        padding: 0 ($input-padding + 20px) 0 $input-padding;
+        line-height: 35px;
+        height: 37px;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        white-space: nowrap;
+
+        &:after {
+            font-family: $icon-font;
+            content: '\e909';
+            display: block;
+            line-height: 33px;
+            font-size: 14px;
+            position: absolute;
+            right: 7px;
+            top: 0;
+        }
+    }
+    
+    .dropdown-list {
+        display: none;
+        position: absolute;
+        z-index: 2;
+        top: 37px;
+        left: 0;
+        right: 0;
+        padding: 7px 0;
+        background: $content-background;
+        border: 1px solid $brand;
+        border-top: 1px solid $input-border-color;
+        @include border-radius(0 0 $input-radius $input-radius);
+        @include box-shadow(0, 0, 3px, $brand);
+        overflow: auto;
+        max-height: 250px;
+
+        &:before {
+            content: '';
+            display: block;
+            background: $content-background;
+            height: 1px;
+            position: absolute;
+            top: -3px;
+            left: 0;
+            right: 0;
+            border-bottom: 1px solid $border-color;
+        }
+    }
+
+    .dropdown-item {
+        line-height: 22px;
+        cursor: pointer;
+        padding: 0 $input-padding;
+
+        &.is-selected {
+            background: lighten($brand, 60%);
+        }
+
+        &:hover {
+            background: $brand;
+            color: $negative-text;
+            border-top: 1px solid lighten($brand, 60%);
+            border-bottom: 1px solid lighten($brand, 60%);
+            line-height: 20px;
+        }
+    }
+
+    &.is-active, &:focus, &:active, &:hover {
+        .dropdown-selected {
+            border-color: $brand;
+            @include box-shadow(0, 0, 3px, $brand);
+
+            &:after {
+                color: $brand;
+            }
+        }
+    }
+
+    &.is-active {
+        z-index: 101;
+
+        .dropdown-selected {
+            @include border-radius($input-radius $input-radius 0 0);
+
+            &:after {
+                @include flipVertically();
+            }
+        }
+
+        .dropdown-list {
+            display: block;
+        }
+    }
+
+    &.dropdown-full-width {
+        width: 100%;
+    }
+
+    &.dropdown-switch {
+        &.is-active {
+            z-index: 1000;
+        }
+
+        .dropdown-list {
+            padding: 0;
+            max-height: none;
+
+            border-width: 0;
+            @include border-radius(0);
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: auto;
+        }
+
+        .switch-apply {
+            padding: 20px 13px;
+            text-align: center;
+            margin: 0 auto;
+            max-width: 300px;
+        }
+
+        .switch-group {
+            border-bottom: 1px solid $border-color;
+            padding: 35px 17px;
+
+            .switch-header {
+                @include font-bold();
+
+                line-height: 14px;
+                margin: 0 0 18px;
+            }
+
+            .switch-item {
+                cursor: pointer;
+                font-size: 0.9em;
+                line-height: 14px;
+                margin: 0 0 8px;
+                white-space: nowrap;
+                padding: 0 0 0 25px;
+
+                &.is-selected {
+                    color: $brand;
+
+                    &:after {
+                        content: '\e910';
+                        font-family: $icon-font;
+                        line-height: inherit;
+                        display: inline-block;
+                        vertical-align: top;
+                        margin-left: 3px;
+                    }
+                }
+            }
+        }
+
+        @media screen and (min-width: $tablet-width) {
+            &.is-active {
+                z-index: 101;
+            }
+
+            .dropdown-list {
+                width: 320px;
+                padding: 10px 10px 10px 20px;
+                position: absolute;
+                top: 37px;
+                left: auto;
+                right: 0;
+                bottom: auto;
+                border-width: 1px;
+
+                @include border-radius($input-radius 0 $input-radius $input-radius);
+                @include clearfix();
+            }
+
+            .switch-apply {
+                display: none;
+            }
+
+            .switch-group {
+                border-bottom: none;
+                padding: 0;
+                float: left;
+                width: 50%;
+
+                .switch-item {
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    &.dropdown-currency {
+        width: 105px;
+
+        &.is-active {
+            z-index: 1000;
+        }
+
+        .currency-group {
+            border-top: 1px solid $border-color;
+            padding: 13px;
+            @include clearfix();
+
+            &:first-child {
+                border-top: none;
+            }
+
+            .currency-header {
+                line-height: 14px;
+                margin: 0 0 10px;
+            }
+
+            .currency-item {
+                cursor: pointer;
+                line-height: 28px;
+                margin: 0 0 8px;
+                @include transition(background, 0.5s, ease);
+                @include border-radius($input-radius);
+                background: $content-background;
+                padding: 0 12px;
+                white-space: nowrap;
+                overflow: hidden;
+
+                &:hover {
+                    background: $border-color;
+                }
+
+                &.is-selected {
+                    background: $content-background-alternative;
+
+                    b,
+                    &:after {
+                        color: $brand;
+                    }
+
+                    &:after {
+                        content: '\e910';
+                        font-family: $icon-font;
+                        line-height: inherit;
+                        display: inline-block;
+                        vertical-align: top;
+                        margin-left: 3px;
+                    }
+                }
+            }
+        }
+
+        .dropdown-list {
+            padding: 0;
+            max-height: none;
+
+            border-width: 0;
+            @include border-radius(0);
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: auto;
+        }
+
+        @media screen and (min-width: $tablet-width) {
+            .currency-item {
+                width: 49%;
+                float: left;
+
+                &:nth-child(2n + 1) {
+                    float: right;
+                }
+            }
+        }
+
+        @media screen and (min-width: $desktop-width) {
+            &.is-active {
+                z-index: 101;
+            }
+
+            .dropdown-list {
+                width: 400px;
+                max-height: none;
+                padding: 7px 0;
+                position: absolute;
+                top: 37px;
+                right: auto;
+                bottom: auto;
+                border-width: 1px;
+
+                @include border-radius($input-radius 0 $input-radius $input-radius);
+                @include clearfix();
+            }
+        }
+    }
+}

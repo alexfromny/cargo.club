@@ -1,0 +1,190 @@
+.reviews {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background-color: $quotes-label-bg;
+
+    .content {
+        margin: 0;
+    }
+
+    .reviews-label {
+        position: relative;
+        height: 50px;
+        line-height: 50px;
+        color: $negative-text;
+        font-size: 25px;
+        text-align: center;
+        background: $brand;
+        z-index: 2;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 25px 0 25px;
+            border-color: $brand transparent transparent transparent;
+            position: absolute;
+            left: 50%;
+            top: 49px;
+            margin-left: -25px;
+        }
+    }
+
+    .quotes-wrapper {
+        display: block;
+        padding: 35px 20px;
+
+        .quotes {
+            display: block;
+            width: 100%;
+            overflow: hidden;
+            height: 80px;
+            font-size: 0;
+
+            li {
+                position: relative;
+                display: inline-block;
+                height: 100%;
+                color: $negative-text;
+                @include text-shadow(1px, 1px, 0, darken($quotes-label-bg, 10%));
+
+                img {
+                    position: absolute;
+                    height: 58px;
+                    width: 58px;
+                    border: 2px solid $content-background;
+                    @include border-radius(100%);
+                    @include box-shadow(1px, 1px, 0, darken($quotes-label-bg, 10%));
+                }
+
+                p {
+                    margin: 0 0 0 80px;
+                    color: $quotes-text-color;
+                    font-size: $text-size;
+
+                    strong {
+                        display: block;
+                        margin-bottom: 5px;
+                        font-size: $text-large-size;
+                        color: $negative-text;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: $tablet-width) {
+        border-top: 3px solid $negative-text;
+        height: $reviews-height;
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1;
+            height: 100%;
+            width: 200px;
+            background: -moz-linear-gradient(left, rgba(30, 87, 153, 0) 0%, rgba(1, 100, 159, 1) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(left, rgba(30, 87, 153, 0) 0%, rgba(1, 100, 159, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to right, rgba(30, 87, 153, 0) 0%, rgba(1, 100, 159, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#001e5799', endColorstr='#01649f', GradientType=1); /* IE6-9 */
+        }
+
+        .reviews-label {
+            position: absolute;
+            height: $reviews-height;
+            left: 0;
+            top: 0;
+            width: 205px;
+            padding-top: 50px;
+            line-height: 25px;
+            font-size: 25px;
+            text-align: center;
+            background: $brand;
+
+            .reviews-label-smaller {
+                font-size: 17px;
+                display: block;
+            }
+
+            &:after {
+                border-width: 73.5px 0 73.5px 25px;
+                border-color: transparent transparent transparent $brand;
+                left: 204px;
+                top: 0;
+                margin-left: 0;
+            }
+        }
+
+        .quotes-wrapper {
+            padding: 35px 0 0;
+            margin-left: 230px;
+            position: relative;
+
+            .quotes {
+                display: block;
+                overflow: hidden;
+                width: 999999px;
+                height: $reviews-height - 3px - 35px;
+                font-size: 0;
+
+                li {
+                    height: 100%;
+                    width: 350px;
+                    padding-left: 20px;
+                    color: $negative-text;
+                    @include text-shadow(1px, 1px, 0, darken($quotes-label-bg, 10%));
+
+                    img {
+                        position: absolute;
+                        height: 58px;
+                        width: 58px;
+                        border: 2px solid $content-background;
+                        @include border-radius(100%);
+                        @include box-shadow(1px, 1px, 0, darken($quotes-label-bg, 10%));
+                    }
+
+                    p {
+                        margin: 0 0 0 80px;
+                        color: $quotes-text-color;
+                        font-size: $text-size;
+
+                        strong {
+                            display: block;
+                            margin-bottom: 5px;
+                            font-size: $text-large-size;
+                            color: $negative-text;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: $desktop-width) {
+        margin: -($reviews-height+$footer-height) 0 $footer-height;
+
+        .content {
+            margin: 0 auto;
+        }
+
+        .reviews-label {
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 9999px;
+                left: 1px;
+                top: 0;
+                bottom: 0;
+                margin-left: -9999px;
+                background: $brand;
+            }
+        }
+    }
+}

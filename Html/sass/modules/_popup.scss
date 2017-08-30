@@ -1,0 +1,161 @@
+// Use on body
+.popup-opened {
+    overflow: hidden !important;
+}
+
+.popup {
+    position: fixed; left: 0; top: 0; right: 0; bottom: 0; z-index: 99;
+    display: none;
+
+    &.is-opened {
+        display: block;
+    }
+
+    .overlay {
+        position: absolute; right: 0; left: 0; top: 0; bottom: 0; z-index: 1;
+        background: #000; opacity: 0.7;
+    }
+
+    .popup-wrapper {
+        position: absolute; top: 0;left: 0;right: 0;bottom: 0;z-index: 2; overflow: auto;
+        padding-bottom: 25px;
+    }
+
+    .popup-content {
+        position: relative;
+        z-index: 2;
+        max-width: 90%;
+        min-width: 290px;
+        width: 100%;
+        min-height: 200px;
+        margin: 100px auto 0;
+        background-color: $content-background;
+        @include border-radius($input-radius * 2);
+
+        @media screen and (min-width: $tablet-width) {
+            max-width: 475px;
+        }
+    }
+
+    .popup-header {
+        position: relative;
+        line-height: $header-height / 2;
+        padding: 20px 31px;
+        border-bottom: 2px solid $border-color;
+
+        h3 {
+            margin: 0;
+        }
+
+        h4 {
+            margin: 0;
+            font-size: 1.3em;
+            line-height: 1.2em;
+            text-align: center;
+        }
+
+        @media screen and (min-width: $tablet-width) {
+            line-height: $header-height;
+            padding-top: 0;
+            padding-bottom: 0;
+
+            &.show-logo {
+                background: url('../img/logo.png') 0 0 no-repeat;
+                background-position: right 33px top 30px;
+                background-size: 109px;
+            }
+
+            h4 {
+                padding: 30px;
+            }
+        }
+    }
+
+    .popup-body {
+        padding: 25px 37px 20px;
+    }
+
+    .popup-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 2;
+        @include opacity(0.7);
+        @include hover-trans();
+        color: $text-strong;
+        font-size: 1.5em;
+
+        &:hover {
+            @include opacity(1);
+        }
+
+        .icon {
+            margin-top: 0;
+        }
+
+        @media screen and (min-width: $tablet-width) {
+            top: 0;
+            right: -55px;
+            color: $negative-text;
+        }
+    }
+
+    h2 {
+        color: $text;
+        font-size: 18px;
+    }
+
+    h3 {
+        color: $text-strong;
+        font-size: 1.9em;
+        @include font-thin();
+        margin: 0 0 20px;
+
+        @media screen and (min-width: $tablet-width) {
+            white-space: nowrap;
+        }
+    }
+
+    h4 {
+        color: $text-strong;
+        font-size: 1.5em;
+        line-height: 25px;
+        @include font-normal();
+        margin: 0 0 40px;
+    }
+}
+
+.form.form-popup {
+    margin: 0 -20px;
+
+    .required {
+        font-size: 2em;
+        display: block;
+    }
+
+    .form-control-group .form-control.form-control-standalone {
+        width: 100%;
+        display: block;
+    }
+
+    &.form-popup-full-width {
+        margin: 0 -25px;
+    }
+
+    @media screen and (min-width: $tablet-width) {
+        margin: 0 10%;
+
+        &.form-popup-full-width {
+            margin: 0;
+        }
+
+        .required {
+            display: inline;
+        }
+
+        .form-control-group .form-control.form-control-standalone {
+            width: 95%;
+            display: inline-block;
+        }
+    }
+}

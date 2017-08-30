@@ -1,0 +1,237 @@
+.icon {
+    font-family: $icon-font;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    font-size: 1.2em;
+    display: inline-block;
+    vertical-align: top;
+    line-height: inherit;
+    margin-top: -2px;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &.icon-home:before {
+        content: '\e90b';
+    }
+
+    &.icon-advert-add:before {
+        content: '\e902';
+    }
+
+    &.icon-info:before {
+        content: '\e90c';
+    }
+
+    &.icon-plus:before  {
+        content: '\e912';
+    }
+
+    &.icon-close:before {
+        content: '\e906';
+    }
+
+    &.icon-edit {
+        font-size: 1em;
+
+        &:before {
+            content: '\e90a';
+        }
+    }
+
+    &.icon-delete:before {
+        content: '\e908';
+    }
+
+    &.icon-private:before  {
+        content: '\e914';
+    }
+
+    &.icon-support:before  {
+        content: '\e917';
+    }
+
+    &.icon-upload:before  {
+        content: '\e919';
+    }
+
+    &.icon-ok:before {
+        content: '\e910';
+    }
+
+    &.icon-calendar:before {
+        content: '\e903';
+    }
+
+    &.icon-price:before {
+        content: '\e913';
+    }
+
+    &.icon-arrow-left:before {
+        content: '\e90d';
+    }
+
+    &.icon-arrow-right:before {
+        content: '\e900';
+    }
+
+    &.icon-trigger-down:before {
+        content: '\e909';
+    }
+
+    &.icon-trigger-up {
+        @include flipVertically();
+        &:before {
+            content: '\e909';
+        }
+    }
+
+    &.icon-phone:before {
+        content: '\e911';
+    }
+
+    &.icon-mail:before {
+        content: '\e90e';
+    }
+
+    &.icon-path:before {
+        content: '\e901';
+    }
+
+    &.icon-car:before {
+        content: '\e918';
+    }
+
+    &.icon-cargo:before {
+        content: '\e904';
+    }
+
+    &.icon-comment:before {
+        content: '\e907';
+    }
+
+    &.icon-expand:before {
+        content: '\e91a';
+    }
+
+    &.icon-settings:before {
+        content: '\e916';
+    }
+
+    &.icon-point:before {
+        content: '\e90f';
+    }
+
+    &.icon-options:before {
+        content: '\e91b';
+    }
+
+    &.icon-facebook {
+        display: inline-block;
+        background: url('../img/icons/facebook.png') center center no-repeat;
+        background-size: cover;
+        vertical-align: top;
+        line-height: 18px;
+        width: 24px;
+        height: 24px;
+        margin-top: 0;
+    }
+
+    &.icon-skype {
+        display: inline-block;
+        background: url('../img/icons/skype.png') center center no-repeat;
+        background-size: cover;
+        vertical-align: top;
+        line-height: 18px;
+        width: 18px;
+        height: 18px;
+        margin-top: 0;
+    }
+
+    // FLAGS
+    &.icon-flag {
+        display: inline-block;
+        background: url('') center center no-repeat;
+        background-size: 100%;
+        vertical-align: top;
+        line-height: 18px;
+        margin-top: 0;
+
+        width: 22px;
+        height: 16px;
+        border: 1px solid $border-color;
+        @include border-radius(3px);
+        @include box-shadow(content-box);
+    }
+
+    &.icon-flag-en {
+        background-image: url('../img/icons/flag-en.png');
+    }
+
+    &.icon-flag-de {
+        background-image: url('../img/icons/flag-de.png');
+    }
+
+    &.icon-flag-ru {
+        background-image: url('../img/icons/flag-ru.png');
+    }
+
+    &.icon-flag-fr {
+        background-image: url('../img/icons/flag-fr.png');
+    }
+
+    &.icon-flag-it {
+        background-image: url('../img/icons/flag-it.png');
+    }
+
+    &.icon-flag-pl {
+        background-image: url('../img/icons/flag-pl.png');
+    }
+
+    &.icon-flag-lt {
+        background-image: url('../img/icons/flag-lt.png');
+    }
+
+    &.icon-flag-lv {
+        background-image: url('../img/icons/flag-lv.png');
+    }
+
+    &.icon-flag-et {
+        background-image: url('../img/icons/flag-et.png');
+    }
+
+    &.icon-flag-ua {
+        background-image: url('../img/icons/flag-ua.png');
+    }
+
+    &.icon-flag-cz {
+        background-image: url('../img/icons/flag-cz.png');
+    }
+
+    &.icon-flag-sk {
+        background-image: url('../img/icons/flag-sk.png');
+    }
+}
+
+.big-icon {
+    display: block;
+    margin: 0 auto 25px;
+    width: 110px;
+    height: 110px;
+    @include border-radius(50%);
+    background: $content-background-alternative url('') center center no-repeat;
+
+    &.warning-icon {
+        background-image: url('../img/icons/warning.png');
+        background-size: 71px 61.5px;
+    }
+
+    &.forbidden-icon {
+        background-image: url('../img/icons/forbidden.png');
+        background-size: 91px 62px;
+    }
+}

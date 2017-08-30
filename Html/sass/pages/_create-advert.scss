@@ -1,0 +1,166 @@
+.create-advert {
+    position: relative;
+    z-index: 3;
+    background: $content-background;
+    margin-bottom: -15px;
+}
+
+
+.form.form-big {
+    .form-group {
+        padding: 35px 0 25px;
+        border-bottom: 1px solid $border-color;
+        @include clearfix();
+    }
+
+    .form-label-placeholder {
+        min-height: 1px;
+    }
+
+    .form-control-placeholder {
+        min-height: 1px;
+    }
+
+    .form-map-placeholder {
+        min-height: 1px;
+        padding-top: 15px;
+
+        .form-map {
+            height: 190px;
+        }
+    }
+
+    .button-group {
+        padding: 45px 0 40px;
+        margin: 0;
+
+        .btn.btn-big {
+            display: block;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+    }
+
+    .form-group-label {
+        font-size: 2.3em;
+        line-height: 1em;
+        display: block;
+        margin-bottom: 23px;
+    }
+
+    .form-control-group {
+        float: left;
+        margin: 0 20px 15px 0;
+
+        &.form-control-group-calendar {
+            float: none;
+
+            .form-label-inline {
+                display: inline-block;
+                min-width: 25px;
+                text-align: right;
+            }
+
+            .dropdown + .dropdown {
+                margin-left: 5px;
+            }
+        }
+    }
+
+    .form-control-complex {
+        position: relative;
+
+        .form-control {
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-control-complex-label {
+            background: $brand;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            line-height: 37px;
+            text-align: center;
+            width: 37px;
+            color: $negative-text;
+            z-index: 2;
+            @include border-radius($input-radius 0 0 $input-radius);
+        }
+
+        .form-control-complex-btn {
+            position: absolute;
+            line-height: 37px;
+            top: 0;
+            right: 7px;
+            z-index: 2;
+            cursor: pointer;
+            font-size: $text-large-size;
+            color: $input-border-color;
+
+            &:hover {
+                color: $brand;
+            }
+
+            .icon {
+                margin-top: 0;
+            }
+        }
+
+        .form-control {
+            padding-left: 50px;
+            padding-right: 40px;
+        }
+    }
+
+
+    @media screen and (min-width: $tablet-width) {
+        .form-label-placeholder {
+            float: left;
+            width: 40%;
+
+            &.form-label-placeholder-big {
+                width: 50%;
+            }
+        }
+
+        .form-control-placeholder {
+            float: right;
+            width: 60%;
+        }
+
+        .form-map-placeholder {
+            float: right;
+            width: 45%;
+            padding-top: 74px;
+
+            .form-map {
+                height: 250px;
+            }
+        }
+    }
+
+
+    @media screen and (min-width: $content-width-small) {
+        .form-control-placeholder {
+            width: 55%;
+        }
+
+        .form-map-placeholder {
+            width: 47%;
+        }
+
+        .form-control-group {
+            &.form-control-group-calendar {
+                float: left;
+
+                .form-label-inline {
+                    min-width: initial;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

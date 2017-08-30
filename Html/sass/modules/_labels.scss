@@ -1,0 +1,78 @@
+.label {
+    display: block;
+    width: 55px;
+    height: 37px;
+    position: absolute;
+    left: 0;
+    top: 13px;
+    z-index: 100;
+    @include border-radius(0 3px 3px 0);
+    @include box-sizing(border-box);
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        background: url('') 0 0 no-repeat;
+        background-size: 100%;
+    }
+
+    &.label-car {
+        background: $label-car-color;
+
+        &:after {
+            border-right-color: $label-car-shadow-color;
+        }
+
+        &:before {
+            background-image: url('../img/icons/label-car.png');
+            width: 24px;
+            height: 19px;
+            top: 10px;
+            left: 18px;
+
+            @media screen and (min-width: $desktop-width) {
+                left: 26px;
+            }
+        }
+    }
+
+    &.label-cargo {
+        background: $label-cargo-color;
+
+        &:after {
+            border-right-color: $label-cargo-shadow-color;
+        }
+        
+        &:before {
+            background-image: url('../img/icons/label-cargo.png');
+            width: 19px;
+            height: 23px;
+            top: 8px;
+            left: 15px;
+
+            @media screen and (min-width: $desktop-width) {
+                left: 23px;
+            }
+        }
+    }
+
+
+    @media screen and (min-width: $desktop-width) {
+        width: 63px;
+        left: -8px;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 7px 7px 0;
+            border-color: transparent;
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+        }
+    }
+}
